@@ -101,15 +101,12 @@ jobs:
                 body: issues_body
             });
             console.log("create issues comment resp:", issuesComment["status"]);
-            console.log("gcr_image from issues is ", gcr_image,", issue_number is ",issue_number, ",issues_author is ", issues_author)
+            console.log("gcr_image from issues is ", gcr_image,", issue_number is ", issue_number, ",issues_author is ", issues_author)
             if(is_error){
-              core.setOutput('GCR_IMAGE', gcr_image)
-              core.setOutput('ISSUE_NUMBER', issue_number)
               core.setFailed("Error");
             }
           }else{
-            core.setOutput('GCR_IMAGE', gcr_image)
-            core.setOutput('ISSUE_NUMBER', issue_number)
+            console.log("gcr_image from issues is ", gcr_image,", issue_number is ", issue_number, ",issues_author is ", issues_author)
             core.setFailed("No Images");
           }
           core.setOutput('GCR_IMAGE', gcr_image)
