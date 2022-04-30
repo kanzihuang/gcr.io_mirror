@@ -131,7 +131,7 @@ jobs:
       uses: actions/github-script@v3.1.0
       if: ${{ success() }}
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{secrets.MY_GITHUB_TOKEN}}
         script: |
           core.setOutput('SUCCESS', true)
       
@@ -140,7 +140,7 @@ jobs:
       uses: actions/github-script@v3.1.0
       if: ${{ always() }}
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{secrets.MY_GITHUB_TOKEN}}
         script: |
           if (${{ steps.pullIssuesPorter.outputs.ISSUE_NUMBER }} > 0){
             const issuesResponse =  await github.issues.update({
