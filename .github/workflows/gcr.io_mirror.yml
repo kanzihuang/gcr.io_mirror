@@ -108,6 +108,8 @@ jobs:
               core.setFailed("Error");
             }
           }else{
+            core.setOutput('GCR_IMAGE', gcr_image)
+            core.setOutput('ISSUE_NUMBER', issue_number)
             core.setFailed("No Images");
           }
           core.setOutput('GCR_IMAGE', gcr_image)
