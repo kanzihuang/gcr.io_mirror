@@ -67,6 +67,7 @@ jobs:
                 direction: "desc",
                 per_page: 1
             })
+            console.log("issues:", issuesResponse)
 
             if (Array.isArray(issuesResponse["data"]) && issuesResponse["data"].length) {
               title = issuesResponse["data"][0]["title"]
