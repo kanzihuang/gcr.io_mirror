@@ -11,7 +11,7 @@ on:
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
-  GH_USER: anjia0532
+  GH_USER: ${{ github.event.actor.login }}
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
       id: pullIssuesPorter
       uses: actions/github-script@v3.1.0
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{secrets.MY_GITHUB_TOKEN}}
         script: |
           const fs = require('fs')
           
