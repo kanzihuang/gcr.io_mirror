@@ -11,7 +11,7 @@ on:
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
-  GH_USER: ${{ github.event.actor.login }}
+  GH_USER: kanzihuang
 
 jobs:
   build:
